@@ -1,0 +1,13 @@
+## Clustering data based on the average of all three values namely temperature, precipitation and wind
+Data<-read.csv("inputR.csv")
+out<-kmeans(Data[,2:4],2)
+out
+final_data<-data.frame(cbind(Data,out$cluster))
+plot(final_data$Year,final_data$avgtemp,col=final_data$out.cluster)
+
+## Clustering data based on the average of temperature
+Data<-read.csv("inputR.csv")
+out_1<-kmeans(Data$avgtemp,2)
+out_1
+final_data<-data.frame(cbind(Data,out_1$cluster))
+plot(final_data$Year,final_data$avgtemp,col=final_data$out_1.cluster)

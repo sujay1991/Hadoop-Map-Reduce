@@ -1,0 +1,39 @@
+Make Directory:
+
+hadoop fs -mkdir /user/hduser/Input
+
+
+List Directory:
+
+hadoop fs -ls /user/hduser/
+Input
+
+Copy File to hdfs:
+
+hadoop fs -put input.csv /user/hduser/
+Input
+
+Copy File from hdfs:
+
+hadoop fs -get /user/hduser/Output/part-00000 part.txt
+
+
+To start services:
+
+start-dfs.sh
+start-yarn.sh
+
+
+To stop services:
+
+stop-all.sh
+
+
+To list services:
+
+jps
+
+
+To run jar file for map reduce:
+
+hadoop jar <jar name> <folder path for input> <folder path for output> <no of mapper> <no of reducer>
